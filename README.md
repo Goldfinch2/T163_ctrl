@@ -45,16 +45,16 @@ This Arduino program, designed for the Arduino UNO board, interfaces with the NA
 
 4. **Operation:**
    - Power up the NAD T163 and the Arduino UNO. The OLED screen will illuminate.
-   - As inputs on the amplifier are toggled, the Arduino will adjust the volume to the last set level for that specific input. The OLED will display the current input, volume, and if relevant, the AM/FM frequency.
+   - As inputs on the pre-amplifier are toggled, the Arduino will adjust the volume to the last set level for that specific input. The OLED will display the current input, volume, and if relevant, the AM/FM frequency.
    - The Arduino consistently scans for changes in the input to adjust and display in real time.
 
 ## Usage:
 
-Once set up, operate your amplifier as always. The Arduino program will work in the background, ensuring every time an input is chosen, the volume aligns with its last set level. The OLED display provides a prompt visual update of the selections, including input, volume, and AM/FM frequency (if applicable).
+Once set up, operate your pre-amplifier as always. The Arduino program will work in the background, ensuring every time an input is chosen, the volume aligns with its last set level. The OLED display provides a prompt visual update of the selections, including input, volume, and AM/FM frequency (if applicable).
 
 ## Troubleshooting:
 
-1. **Volume Doesn't Change:** Confirm the serial connection between the Arduino's RS232 shield and the amplifier, with the DB9 null modem, is correctly established.
+1. **Volume Doesn't Change:** Confirm the serial connection between the Arduino's RS232 shield and the pre-amplifier, with the DB9 null modem, is correctly established.
 2. **Incorrect Volume or Display Info:** Check for interference from other devices. A reset of the Arduino may be necessary.
 3. **Input Not Recognized or Displayed:** Verify the serial connection, confirm the OLED's attachment, and ensure the program runs correctly on the Arduino.
 
