@@ -1,6 +1,6 @@
-# NAD T163 Amplifier Input Volume Memory with OLED Display
+# NAD T163 Pre-Amplifier Input Volume Memory with OLED Display
 
-This Arduino program, designed for the Arduino UNO board, interfaces with the NAD T163 amplifier via its serial port. The system recalls and sets the volume level for each selected input based on its previous volume. An integral part of this setup is a 0.96 inch SPI OLED display, which provides real-time feedback about the selected input, its volume setting, and if applicable, the AM/FM station frequency.
+This Arduino program, designed for the Arduino UNO board, interfaces with the NAD T163 pre-amplifier via its serial port. The system recalls and sets the volume level for each selected input based on its previous volume. An integral part of this setup is a 0.96 inch SPI OLED display, which provides real-time feedback about the selected input, its volume setting, and if applicable, the AM/FM station frequency.
 
 ## Features:
 
@@ -30,7 +30,7 @@ This Arduino program, designed for the Arduino UNO board, interfaces with the NA
 
 1. **Connect the Hardware:**
    - Mount the RS232 Shield on the Arduino UNO board.
-   - Using the RS232 serial cable, establish a connection between the RS232 Shield and the NAD T163 amplifier. Connect the DB9 null modem between the cable and the shield.
+   - Using the RS232 serial cable, establish a connection between the RS232 Shield and the NAD T163. Connect the DB9 null modem between the cable and the shield.
    - Attach the 0.96 inch SPI OLED display to the Arduino UNO following the [guide](https://electropeak.com/learn/interfacing-0-96-inch-spi-oled-display-module-with-arduino/).
 
 2. **Install Required Libraries:**
@@ -44,7 +44,7 @@ This Arduino program, designed for the Arduino UNO board, interfaces with the NA
    - Deploy the code to the Arduino board.
 
 4. **Operation:**
-   - Power up the NAD T163 amplifier and the Arduino UNO. The OLED screen will illuminate.
+   - Power up the NAD T163 and the Arduino UNO. The OLED screen will illuminate.
    - As inputs on the amplifier are toggled, the Arduino will adjust the volume to the last set level for that specific input. The OLED will display the current input, volume, and if relevant, the AM/FM frequency.
    - The Arduino consistently scans for changes in the input to adjust and display in real time.
 
