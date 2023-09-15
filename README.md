@@ -61,8 +61,8 @@ Once set up, operate your amplifier as always. The Arduino program will work in 
 ## Future Enhancements:
 
 - **Volume Fade-In:** Consider implementing a fade-in effect when adjusting volume for a smoother experience.
-- **Remote Monitoring:** Ponder the addition of a wireless module for off-site observation and volume level management.
-
+- **IR Receiver:** Ponder the addition of a IR receiver to set the input or volume from a remote.
+  
 ## Contributing:
 
 Open for contributions! For enhancements or fixes, please create a pull request or issue on our [GitHub repository](#).
