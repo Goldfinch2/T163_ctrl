@@ -18,7 +18,6 @@ This Arduino program, designed for the Arduino UNO board, interfaces with the NA
 - RS232 serial cable (male to female DB9)
 - DB9 Null Modem
 - 0.96 inch SPI OLED display module
-- Necessary connection cables
 
 ### Software Requirements:
 
@@ -45,6 +44,7 @@ This Arduino program, designed for the Arduino UNO board, interfaces with the NA
    - Deploy the code to the Arduino board.
 
 4. **Operation:**
+   - Connect the serial cable to the back of the amplifier.  Connect the other end to the Arduino serial shield with the null modem.
    - Power up the NAD T163 amplifier and the Arduino UNO. The OLED screen will illuminate.
    - As inputs on the amplifier are toggled, the Arduino will adjust the volume to the last set level for that specific input. The OLED will display the current input, volume, and if relevant, the AM/FM frequency.
    - The Arduino consistently scans for changes in the input to adjust and display in real time.
