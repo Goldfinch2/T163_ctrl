@@ -49,6 +49,9 @@ SOFTWARE.
 #define VAR_FM         0x2D
 #define VAR_INPUT      0x35
 
+#define VAR_REMOTE_VOLUME_UP   0x88
+#define VAR_REMOTE_VOLUME_DOWN 0x8c
+
 
 #define INPUT_TUNER    9
 #define INPUT_AM       10
@@ -199,13 +202,17 @@ size_t read_serial_with_timeout(uint8_t *buffer, size_t buffer_size)
             esc = false;
         }
         else {
-            // Check inter-character timeout
-            if (millis() - last_received_time > s_ct.inter_char_timeout) {
-                break;
+            if (index) {
+                // Check inter-character timeout
+                if (millis() - last_received_time > s_ct.inter_char_timeout) {
+                    break;
+                }
             }
-            // Check total timeout
-            if (millis() - start_time > s_ct.total_timeout) {
-                break;
+            else {
+                // Check total timeout
+                if (millis() - start_time > s_ct.total_timeout) {
+                    break;
+                }
             }
         }
 
@@ -315,7 +322,7 @@ bool volume_up()
     uint8_t *frame;
     size_t  frame_len;
 
-    frame = set_frame(CMD_IR, 0x88, NULL, 0, &frame_len);
+    frame = set_frame(CMD_IR, VAR_REMOTE_VOLUME_UP, NULL, 0, &frame_len);
     send_frame(frame, frame_len);
     return true;
 }
@@ -327,7 +334,7 @@ bool volume_down()
     uint8_t *frame;
     size_t   frame_len;
 
-    frame = set_frame(CMD_IR, 0x8c, NULL, 0, &frame_len);
+    frame = set_frame(CMD_IR, VAR_REMOTE_VOLUME_DOWN, NULL, 0, &frame_len);
     send_frame(frame, frame_len);
     return true;
 }
@@ -537,7 +544,7 @@ void show_data_on_display()
 void setup() 
 {
     Serial.begin(9600);
-    set_comm_timeout(20, 200);
+    set_comm_timeout(4, 16);
 
     s_display.begin(SSD1306_SWITCHCAPVCC);
     s_display.clearDisplay();
